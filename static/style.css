@@ -14,7 +14,7 @@ body {
 ========================================= */
 header {
     background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    padding: 60px 20px;
+    padding: 60px 20px 20px 20px;
     border-bottom: 5px solid #00f5d4;
     box-shadow: 0px 5px 25px rgba(0,0,0,0.4);
     display: flex;
@@ -22,12 +22,13 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
     font-weight: 700;
     letter-spacing: 1px;
-    color: #ffd700; /* dorado elegante */
+    color: #ffd700;
     font-size: 3rem;
     margin-bottom: 10px;
 }
@@ -71,6 +72,38 @@ header p {
 }
 
 /* =========================================
+   Contenedor de botones del header
+========================================= */
+.header-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Botones estilo premium */
+.btn-outline-info, .btn-contacto {
+    border: 2px solid #00f5d4;
+    color: #00f5d4;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+    text-align: center;
+}
+
+.btn-outline-info:hover, .btn-contacto:hover {
+    background: linear-gradient(45deg, #00f5d4, #00d1c1);
+    color: #1e1e2f;
+    box-shadow: 0 4px 20px rgba(0,245,212,0.6);
+}
+
+.btn-outline-info:active, .btn-contacto:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(0,245,212,0.4);
+}
+
+/* =========================================
    Main y tarjetas
 ========================================= */
 main {
@@ -92,9 +125,6 @@ main {
     transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
-/* =========================================
-   Título de tarjetas
-========================================= */
 .service-card h3 {
     font-size: 1.5rem;
     color: #00f5d4;
@@ -103,9 +133,6 @@ main {
     text-align: center;
 }
 
-/* =========================================
-   Texto y listas dentro de tarjetas
-========================================= */
 .service-card p,
 .service-card li {
     font-size: 0.95rem;
@@ -121,9 +148,6 @@ main {
     margin-bottom: 5px;
 }
 
-/* =========================================
-   Scroll elegante para contenido largo
-========================================= */
 .service-card.overflow-auto {
     overflow-y: auto;
     padding-right: 10px;
@@ -143,7 +167,6 @@ main {
     background: rgba(255,255,255,0.05);
 }
 
-/* Fade superior e inferior para scroll */
 .service-card.overflow-auto::before,
 .service-card.overflow-auto::after {
     content: '';
@@ -154,38 +177,21 @@ main {
     pointer-events: none;
     z-index: 2;
 }
+
 .service-card.overflow-auto::before {
     top: 0;
     background: linear-gradient(to bottom, #2c2c54 0%, transparent 100%);
 }
+
 .service-card.overflow-auto::after {
     bottom: 0;
     background: linear-gradient(to top, #2c2c54 0%, transparent 100%);
 }
 
-/* =========================================
-   Hover premium en tarjetas
-========================================= */
 .service-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0px 20px 40px rgba(0,0,0,0.5), 0px 0px 25px rgba(0,245,212,0.4);
     background: linear-gradient(145deg, #3c3c74, #4e54c8);
-}
-
-/* =========================================
-   Botones estilo premium
-========================================= */
-.btn-outline-info {
-    border: 2px solid #00f5d4;
-    color: #00f5d4;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-outline-info:hover {
-    background: linear-gradient(45deg, #00f5d4, #00d1c1);
-    color: #1e1e2f;
-    box-shadow: 0 4px 20px rgba(0,245,212,0.6);
 }
 
 /* =========================================
@@ -201,18 +207,8 @@ footer {
 }
 
 /* =========================================
-   Media queries para móviles
+   Redes sociales
 ========================================= */
-@media (max-width: 768px) {
-    .service-card { height: auto; min-height: 400px; }
-    header h1 { font-size: 2.2rem; }
-    .company-title { font-size: 2.2rem; }
-}
-
-
-
-/* redes.css - Estilos para íconos de redes sociales */
-/* Contenedor */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -220,7 +216,6 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Íconos generales */
 .social-icons a {
     color: #f1f1f1;
     font-size: 2rem;
@@ -235,51 +230,42 @@ footer {
     text-decoration: none;
 }
 
-/* Hover elegante */
 .social-icons a:hover {
     transform: scale(1.2) rotate(8deg);
     box-shadow: 0 8px 20px rgba(0, 245, 212, 0.5);
 }
 
-/* Colores específicos */
-.social-icons a.tiktok:hover {
-    background: #000000;
-    color: #00f5d4;
-}
-
-.social-icons a.facebook:hover {
-    background: #1877f2;
-    color: #fff;
-}
-
+.social-icons a.tiktok:hover { background: #000; color: #00f5d4; }
+.social-icons a.facebook:hover { background: #1877f2; color: #fff; }
 .social-icons a.instagram:hover {
     background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
     color: #fff;
 }
 
+/* =========================================
+   Media queries para móviles
+========================================= */
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .company-title { font-size: 1.8rem; }
+    .logo-img { width: 100px; height: 100px; }
 
-/* Botón Contáctanos con mismo estilo que Sobre Nosotros */
-.btn-contacto {
-    border: 2px solid #00f5d4;
-    color: #00f5d4 !important;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 10px 22px;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    background: transparent; /* igual que outline */
+    /* Botones debajo del header en móviles */
+    .header-buttons,
+    header .position-absolute {
+        position: static !important; /* quita el absolute para móviles */
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-outline-info, .btn-contacto {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+        width: auto; /* que no ocupe todo el ancho si no quieres */
+    }
+
+    .service-card { height: auto; min-height: 400px; }
 }
-
-/* Hover igual que Sobre Nosotros */
-.btn-contacto:hover {
-    background: linear-gradient(45deg, #00f5d4, #00d1c1);
-    color: #1e1e2f !important;
-    box-shadow: 0 4px 20px rgba(0,245,212,0.6);
-}
-
-/* Active (cuando se presiona) */
-.btn-contacto:active {
-    transform: translateY(1px);
-    box-shadow: 0 3px 8px rgba(0,245,212,0.4);
-}
-
