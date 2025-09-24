@@ -1,0 +1,74 @@
+/* Historia - Página Sobre Nosotros */
+
+/* Fuente elegante y fondo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background: rgba(30, 30, 47, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Título principal */
+h1.company-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    /* Efecto dorado elegante */
+    background: linear-gradient(90deg, #ffd700, #ffcc33, #e6ac00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Párrafos */
+p.fs-5 {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    text-align: justify; /* Alineación elegante */
+    text-justify: inter-word;
+    color: #e0e0e0;
+}
+
+/* Botón regresar */
+a.btn-outline-info {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 2px solid #00f5d4;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+a.btn-outline-info:hover {
+    background-color: #00f5d4;
+    color: #1e1e2f;
+    border-color: #00f5d4;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 245, 212, 0.5);
+}
+
+/* Para darle un toque final a la lectura */
+p.fs-5::first-letter {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffd700;
+    float: left;
+    margin-right: 8px;
+    line-height: 1;
+}
